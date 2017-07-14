@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  match 'submission/upload' => 'submissions#upload', :via => :get
+  match 'auction/bulkload' => 'auctions#bulkload', :via => :post
+  # resources :auctions # CRUD actions
 end

@@ -1,0 +1,5 @@
+<h1>Upload Auction CSV file</h1>
+<%= form_for :auction, url: '/auction/bulkload', html: { multipart: true } do |form| %>
+  <%= form.file_field :csv_file %>
+  <%= submit_tag "Upload" %>
+<% end %>

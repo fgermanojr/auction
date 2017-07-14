@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713193825) do
+ActiveRecord::Schema.define(version: 20170713224926) do
 
   create_table "auctions", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20170713193825) do
     t.decimal "winning_bid", precision: 8, scale: 2
     t.decimal "seller_payout", precision: 8, scale: 2
     t.decimal "profit", precision: 8, scale: 2
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.string "csv_file_file_name"
+    t.string "csv_file_content_type"
+    t.integer "csv_file_file_size"
+    t.datetime "csv_file_updated_at"
   end
 
 end
