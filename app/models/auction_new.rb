@@ -1,0 +1,2 @@
+class AuctionNew < ApplicationRecord
+end

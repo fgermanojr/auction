@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Auctions Listing</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Vehicle Description</th>
+      <th>VIN</th>
+      <th>Winning Bid</th>
+      <th>Seller Payout</th>
+      <th>Profit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @auction_news.each do |auction_news| %>
+      <tr>
+        <td><%= auction_news.name %></td>
+        <td><%= auction_news.city %></td>
+        <td><%= auction_news.vehicle_desc %></td>
+        <td><%= auction_news.vehicle_vin %></td>
+        <td><%= number_to_currency(auction_news.winning_bid) %></td>
+        <td><%= number_to_currency(auction_news.seller_payout) %></td>
+        <td><%= number_to_currency(auction_news.profit) %></td>
+        <td><%= link_to 'Show', auction_news %></td>
+        <td><%= link_to 'Edit', edit_auction_news_path(auction_news) %></td>
+        <td><%= link_to 'Destroy', auction_news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Auction Summary', auction_new_summary_path %>
+
+

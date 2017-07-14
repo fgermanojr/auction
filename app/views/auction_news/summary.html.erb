@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Auction Summary</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>VehicleCount</th>
+      <th>TotalProfit</th>
+      <th>AvgProfit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @auction_news_summary.each do |auction_summary| %>
+      <tr>
+        <td><%= auction_summary.name %></td>
+        <td><%= auction_summary.city %></td>
+        <td><%= auction_summary.vehicle_count %></td>
+        <td><%= number_to_currency(auction_summary.profit_sum) %></td>
+        <td><%= number_to_currency(auction_summary.profit_avg) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Auction Details', auction_news_index_path %>
+

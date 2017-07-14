@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713224926) do
+ActiveRecord::Schema.define(version: 20170714164417) do
+
+  create_table "auction_news", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.string "vehicle_desc"
+    t.string "vehicle_vin"
+    t.decimal "winning_bid", precision: 8, scale: 2
+    t.decimal "seller_payout", precision: 8, scale: 2
+    t.decimal "profit", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "auctions", force: :cascade do |t|
     t.string "name"
