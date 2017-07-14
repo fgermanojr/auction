@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This sample auction application is written in Ruby on Rails 5.1.
 
-Things you may want to cover:
+It uses a simple sqlite3 database. Once you have cloned this application from
+git, you run it as follows.
 
-* Ruby version
+Assume you have rails installed, start local server, by tying rails s
+when in the root directory of the application.
 
-* System dependencies
+A sample data file is stored in test/fixtures/files/example_input.csv
 
-* Configuration
+To load this file, enter localhost:3000/submission/bulkload
 
-* Database creation
+Select the csv file; hit upload.
+  The file will be uploaded and processed.
+  Once loaded to the database, the summary view is shown.
 
-* Database initialization
+If you want to see the detail behind it, use the detail button.
 
-* How to run the test suite
+If you are on the detail page, you can return to the summary page.
 
-* Services (job queues, cache servers, search engines, etc.)
+On the detail page, you will see future directions to manipulate the data;
+This is NOT debugged code, but serves as a foundation for future work.
+It is the result of setting up resource routes for the auction model.
 
-* Deployment instructions
-
-* ...
+There is an extra model in the database called auction; I initially had trouble
+with Rails being confused about it being a module. So I added a new model, auction_new
+to serve as the actual model. If this was for real I would just clean this up,
+but I would rather spend the time on the test.
